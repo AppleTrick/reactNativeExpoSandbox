@@ -35,6 +35,7 @@ const TabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: string;
 
@@ -64,7 +65,7 @@ const TabNavigator: React.FC = () => {
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: '홈' }} />
       <Tab.Screen name="Explore" component={ExploreScreen} options={{ title: '탐색' }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: '프로필' }} />
-      <Tab.Screen name="WebView" component={WebViewScreen} initialParams={{ url: 'https://www.naver.com' }} options={{ title: '웹뷰' }} />
+      <Tab.Screen name="WebView" component={WebViewScreen} options={{ title: '웹뷰' }} />
     </Tab.Navigator>
   );
 };

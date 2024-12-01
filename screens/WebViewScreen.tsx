@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-type WebViewScreenProps = {
-  url: string;
-};
-
-const WebViewScreen: React.FC<WebViewScreenProps> = ({ url }) => {
+const WebViewScreen: React.FC = () => {
+  // const [url , setUrl] = useState('')
+  const url = 'https://www.naver.com';
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadStart = () => {
@@ -24,13 +22,12 @@ const WebViewScreen: React.FC<WebViewScreenProps> = ({ url }) => {
 
   return (
     <View style={styles.container}>
-      {isLoading && (
+      {/* {isLoading && (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#0000ff" />
           <Text>페이지 로딩 중...</Text>
         </View>
-      )}
-
+      )} */}
       <WebView
         source={{ uri: url }}
         style={styles.webview}
