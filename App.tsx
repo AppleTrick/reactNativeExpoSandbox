@@ -10,14 +10,7 @@ export type RootStackParamList = {
   SocialLogin: undefined;
 };
 
-export type RootBottomTabParamList = {
-  Home: undefined;
-  Explore: undefined;
-  Profile: undefined;
-};
-
 const Stack = createStackNavigator<RootStackParamList>();
-const Tab = createBottomTabNavigator<RootBottomTabParamList>();
 
 const App: React.FC = () => {
   return (

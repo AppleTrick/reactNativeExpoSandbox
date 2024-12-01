@@ -7,12 +7,14 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './HomeScreeen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
+import WebViewScreen from './WebViewScreen';
 
 // 타입 정의
 export type RootBottomTabParamList = {
   Home: undefined;
   Explore: undefined;
   Profile: undefined;
+  WebView: undefined;
 };
 
 // 타입 정의된 네비게이션 prop 타입
@@ -46,6 +48,9 @@ const TabNavigator: React.FC = () => {
             case 'Profile':
               iconName = focused ? 'person' : 'person-outline';
               break;
+            case 'WebView':
+              iconName = focused ? 'earth' : 'earth-outline';
+              break;
             default:
               iconName = 'help-outline';
           }
@@ -59,6 +64,7 @@ const TabNavigator: React.FC = () => {
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: '홈' }} />
       <Tab.Screen name="Explore" component={ExploreScreen} options={{ title: '탐색' }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: '프로필' }} />
+      <Tab.Screen name="WebView" component={WebViewScreen} initialParams={{ url: 'https://www.naver.com' }} options={{ title: '웹뷰' }} />
     </Tab.Navigator>
   );
 };
