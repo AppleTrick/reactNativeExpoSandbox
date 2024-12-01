@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { RootBottomTabParamList } from '../App';
+import { RootBottomTabParamList } from './TabNavigator';
 
 type ExploreScreenProps = BottomTabScreenProps<RootBottomTabParamList, 'Explore'>;
 
