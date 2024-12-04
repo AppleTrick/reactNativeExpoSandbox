@@ -3,7 +3,6 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 const WebViewScreen: React.FC = () => {
-  // const [url , setUrl] = useState('')
   const url = 'https://www.naver.com';
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,12 +21,12 @@ const WebViewScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {/* {isLoading && (
+      {isLoading && (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#0000ff" />
           <Text>페이지 로딩 중...</Text>
         </View>
-      )} */}
+      )}
       <WebView
         source={{ uri: url }}
         style={styles.webview}
@@ -63,6 +62,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   webview: {
+    marginTop: 50,
     flex: 1,
   },
 });

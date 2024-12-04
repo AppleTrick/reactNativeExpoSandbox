@@ -4,10 +4,10 @@ import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-naviga
 import { Ionicons } from '@expo/vector-icons';
 
 // 화면 컴포넌트들
-import HomeScreen from './HomeScreeen';
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
-import WebViewScreen from './WebViewScreen';
+import HomeScreen from '../screens/HomeScreeen';
+import ExploreScreen from '../screens/ExploreScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import WebViewScreen from '../screens/WebViewScreen';
 
 // 타입 정의
 export type RootBottomTabParamList = {
@@ -18,20 +18,20 @@ export type RootBottomTabParamList = {
 };
 
 // 타입 정의된 네비게이션 prop 타입
-type TabNavigationProps = BottomTabNavigationProp<RootBottomTabParamList>;
-type TabRouteProp = RouteProp<RootBottomTabParamList>;
+type BottomTabNavigationProps = BottomTabNavigationProp<RootBottomTabParamList>;
+type BottomTabRouteProp = RouteProp<RootBottomTabParamList>;
 
 // 네비게이션 prop 및 route에 대한 타입 정의
 type TabScreenProps = {
-  navigation: TabNavigationProps;
-  route: TabRouteProp;
+  navigation: BottomTabNavigationProps;
+  route: BottomTabRouteProp;
 };
 
 // 네비게이터 생성
 const Tab = createBottomTabNavigator<RootBottomTabParamList>();
 
 // 탭 네비게이션 컴포넌트
-const TabNavigator: React.FC = () => {
+const BottomNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -70,4 +70,4 @@ const TabNavigator: React.FC = () => {
   );
 };
 
-export default TabNavigator;
+export default BottomNavigator;
