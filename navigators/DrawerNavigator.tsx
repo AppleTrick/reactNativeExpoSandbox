@@ -4,6 +4,7 @@ import HomeScreen from '../screens/HomeScreeen';
 import ExploreScreen from '../screens/ExploreScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import WebViewScreen from '../screens/WebViewScreen';
+import BottomNavigator from './BottomNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,6 +21,7 @@ const DrawerNavigator: React.FC = () => (
       drawerPosition: 'left',
     }}
   >
+    <Drawer.Screen name="BottomNavigation" component={BottomNavigator} />
     <Drawer.Screen name="Home" component={HomeScreen} options={{ title: '홈' }} />
     <Drawer.Screen name="Explore" component={ExploreScreen} options={{ title: '탐색' }} />
     <Drawer.Screen name="Profile" component={ProfileScreen} options={{ title: '프로필' }} />

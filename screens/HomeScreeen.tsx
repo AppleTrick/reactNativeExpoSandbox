@@ -3,9 +3,9 @@ import { View, Text, Button, Alert } from 'react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { RootBottomTabParamList } from '../navigators/BottomNavigator';
 
-type HomeScreenProps = BottomTabScreenProps<RootBottomTabParamList, 'Home'>;
+// type HomeScreenProps = BottomTabScreenProps<RootBottomTabParamList, 'Home'>;
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, route }) => {
+const HomeScreen: React.FC = ({ navigation, route }: any) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>홈 화면</Text>

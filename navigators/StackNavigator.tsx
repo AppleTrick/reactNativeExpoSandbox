@@ -19,8 +19,9 @@ const StackNavigator: React.FC = () => {
         presentation: 'card',
       }}
     >
+      {/* <Stack.Screen name="MainTabs" component={BottomNavigator} /> */}
+
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
-      <Stack.Screen name="MainTabs" component={BottomNavigator} />
       <Stack.Screen name="SocialLogin" component={SocialLoginScreen} />
     </Stack.Navigator>
   );

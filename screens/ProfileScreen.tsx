@@ -6,9 +6,9 @@ import { CompositeScreenProps } from '@react-navigation/native';
 import { RootStackParamList } from '../navigators/StackNavigator';
 import { RootBottomTabParamList } from '../navigators/BottomNavigator';
 
-type ProfileScreenProps = CompositeScreenProps<BottomTabScreenProps<RootBottomTabParamList, 'Profile'>, StackScreenProps<RootStackParamList>>;
+// type ProfileScreenProps = CompositeScreenProps<BottomTabScreenProps<RootBottomTabParamList, 'Profile'>, StackScreenProps<RootStackParamList>>;
 
-const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation, route }) => {
+const ProfileScreen: React.FC = ({ navigation, route }: any) => {
   const handleLogin = () => {
     navigation.navigate('SocialLogin');
   };
