@@ -10,6 +10,7 @@ const HomeScreen: React.FC = ({ navigation, route }: any) => {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>홈 화면</Text>
       <Button title="버튼 클릭" onPress={() => Alert.alert('간단한 버튼 클릭')} />
+      <Button title="Drawer 네비게이션 open" onPress={() => navigation.openDrawer()} />
     </View>
   );
 };
