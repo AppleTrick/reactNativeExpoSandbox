@@ -1,9 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import StackNavigator from './navigators/StackNavigator';
+import { useCallback, useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './navigators/StackNavigator';
+
+// splash 화면이 자동으로 사라지는것을 방지
+SplashScreen.preventAutoHideAsync();
+
+// 애니메이션 설정 (선택적 옵션)
+// SplashScreen.setOptions({
+//   duration: 2000,
+//   fade: true,
+// });
 
 const App: React.FC = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -13,28 +23,34 @@ const App: React.FC = () => {
       try {
         // 폰트 로딩
         await Font.loadAsync(Entypo.font);
-        // 추가 초기화 작업이 필요하다면 여기에 추가
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        // 여기서 시간 설정이 가능
+        await new Promise((resolve) => setTimeout(resolve, 1000));
       } catch (e) {
         console.warn(e);
       } finally {
         setAppIsReady(true);
       }
     }
+
     prepare();
   }, []);
 
-  const onLayoutRootView = useCallback(async () => {
+  const onLayoutRootView = useCallback(() => {
     if (appIsReady) {
-      // 스플래시 스크린 숨기기
-      await SplashScreen.hideAsync();
+      SplashScreen.hide();
     }
   }, [appIsReady]);
 
+  if (!appIsReady) {
+    return null;
+  }
+
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    </View>
   );
 };
 

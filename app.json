@@ -4,22 +4,24 @@
     "slug": "reactNativeExpoSandbox",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#141414"
+    },
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.reactNativeExpoSandbox"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.reactNativeExpoSandbox"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,15 +30,21 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#232323",
-          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#141414",
+          "image": "./assets/images/splash-icon.png",
           "dark": {
-            "image": "./assets/splash-icon-dark.png",
-            "backgroundColor": "#ffffff"
+            "image": "./assets/images/splash-icon.png",
+            "backgroundColor": "#141414"
           },
-          "imageWidth": 200
+          "imageWidth": 100,
+          "imageHeight": 100
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5b41ed78-a66c-4abf-b12b-88f1cf6e0a32"
+      }
+    }
   }
 }
