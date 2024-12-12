@@ -4,14 +4,14 @@
     "slug": "reactNativeExpoSandbox",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#141414"
     },
-    "icon": "./assets/images/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.reactNativeExpoSandbox"
@@ -25,26 +25,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#141414",
-          "image": "./assets/images/splash-icon.png",
-          "dark": {
-            "image": "./assets/images/splash-icon.png",
-            "backgroundColor": "#141414"
-          },
-          "imageWidth": 100,
-          "imageHeight": 100
-        }
-      ]
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "5b41ed78-a66c-4abf-b12b-88f1cf6e0a32"
-      }
     }
   }
 }

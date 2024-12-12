@@ -7,7 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './navigators/StackNavigator';
 
 // splash 화면이 자동으로 사라지는것을 방지
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync()
+  .then((result) => console.log(`SplashScreen.preventAutoHideAsync() succeeded: ${result}`))
+  .catch(console.warn);
 
 // 애니메이션 설정 (선택적 옵션)
 // SplashScreen.setOptions({
